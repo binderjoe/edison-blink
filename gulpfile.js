@@ -38,7 +38,7 @@ gulp.task('remote-debug', function(cb) {
 // Start the node process with the debug flag set.  Change to --debug-brk to debug the app's startup.
 gulp.task('start-remote-debug', function () {
     return ssh
-            .exec(['node --debug ' + config.projectName + config.startFile + ' &' ], 
+            .exec(['node --debug ' + config.projectName + config.startFile ], 
             {filePath: 'debug-start.log'})
         .pipe(gulp.dest('logs'))
 });
