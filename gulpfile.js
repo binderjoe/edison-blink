@@ -28,26 +28,26 @@ gulp.task('install-node', function () {
     .pipe(gulp.dest('logs'))
 });
 
-gulp.task('remote-debug', function(cb) {
-     runSequence('stop-remote-debug',
+gulp.task('restart-debug', function(cb) {
+     runSequence('stop-debug',
                  'deploy',
-                 'start-remote-debug',
+                 'start-debug',
                  cb);
 });
 
 // Start the node process with the debug flag set.  Change to --debug-brk to debug the app's startup.
-gulp.task('start-remote-debug', function () {
+gulp.task('start-debug', function () {
     return ssh
-            .exec(['node --debug ' + config.projectName + config.startFile ], 
+            .exec(['nodemon --debug ' + config.projectName + config.startFile + ' &' ], 
             {filePath: 'debug-start.log'})
         .pipe(gulp.dest('logs'))
 });
 
 // Clean up any node debug processes to avoid port conflicts
-gulp.task('stop-remote-debug', function(){
+gulp.task('stop-debug', function(){
     var debugCommand = '--debug';
     return ssh
-     .exec(['ps | grep \'[n]ode ' + debugCommand + '\' | awk \'{print $1}\' | xargs kill -9 &> /dev/null'], {filePath: 'debug-start.log'})
+     .exec(['ps | grep \'[n]odemon ' + debugCommand + '\' | awk \'{print $1}\' | xargs kill -9 &> /dev/null'], {filePath: 'debug-start.log'})
      .pipe(gulp.dest('logs'))
 });
 
