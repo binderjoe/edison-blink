@@ -1,10 +1,10 @@
 var fs = require('fs');
 
 module.exports = {
-    host: '192.168.0.18',
+    host: '[hostname]',
     user: 'root',
     projectName: '~/node-blink/',
-    privateKey: fs.readFileSync('/Users/joe/.ssh/id_edison'),
+    privateKey: fs.readFileSync('[your ssh key]'),
     startFile: 'main.js',
     sshPort: 22
 }
