@@ -1,0 +1,28 @@
+{
+  "name": "OnboardLEDBlink",
+  "description": "",
+  "version": "0.0.0",
+  "main": "main.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "dependencies": {
+   
+  },
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "gulp-bg": "0.0.8",
+    "gulp-install": "^0.6.0",
+    "gulp-run": "^1.7.1",
+    "gulp-scp2": "0.2.0",
+    "gulp-ssh": "^0.6.0",
+    "gulp-util": "^3.0.7",
+    "run-sequence": "^1.2.2",
+    "gulp-if": "^2.0.1",
+    "gulp-nodemon": "^2.1.0",
+    "gulp-prompt": "^0.2.0",
+    "gulp-rsync": "0.0.6",
+    "jshint": "^2.8.0",
+    "minimist": "^1.2.0"
+  }
+}
