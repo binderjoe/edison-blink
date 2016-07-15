@@ -5,7 +5,7 @@ var path = require('path');
 var sshKeyPath = path.join(os.homedir(), '.ssh/', 'id_edison');
 
 module.exports = {
-    host: '192.168.0.18',
+    host: 'hostname',
     user: 'root',
     projectName: '~/node-blink/',
     privateKey: fs.readFileSync(sshKeyPath),
